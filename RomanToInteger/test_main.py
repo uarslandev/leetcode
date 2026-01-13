@@ -24,5 +24,11 @@ class TestRomanToInteger(unittest.TestCase):
 
         self.assertEqual(self.sol.romanToInt(Input), Output)
 
+    def test_case4(self):
+        Input = "IV"
+        Output = 4
+
+        self.assertEqual(self.sol.romanToInt(Input), Output)
+
 if __name__ == '__main__':
     unittest.main()
