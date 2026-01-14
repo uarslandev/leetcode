@@ -7,13 +7,21 @@ class TestHasCycle(unittest.TestCase):
         self.sol = Solution()
         
     def test_case1(self):
-        head = [3,2,0,-4]
-        pos = 1
-        Output = True
+        a = ListNode(3)
+        b = ListNode(2)
+        c = ListNode(0)
+        d = ListNode(-4)
 
-        self.listNode = ListNode(head)
+        a.next = b
+        b.next = c
+        c.next = d
+        d.next = b
 
-        self.assertEqual(self.sol.hasCycle(self.listNode)), Output)
+        self.assertTrue(self.sol.hasCycle(a))
 
+    def test_case2(self):
+        a = ListNode(1)
+
+        self.assertFalse(self.sol.hasCycle(a))
 if __name__ == '__main__':
     unittest.main()
